@@ -1,5 +1,5 @@
 [package]
-name = "main"
+name = "swe-edge-cli-features"
 version = "0.1.0"
 edition = "2021"
 description = "edge CLI — domain and config validator, curl test scaffolder"
