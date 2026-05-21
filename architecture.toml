@@ -4,3 +4,11 @@ layout = "workspace"
 [workspace]
 name = "cli"
 
+[whitelist]
+allow = [
+  ".gitignore", "CHANGELOG.md", "README.md",
+  "architecture.toml", "deny.toml",
+  "SECURITY.md", "Cargo.toml",
+  "features",
+]
+

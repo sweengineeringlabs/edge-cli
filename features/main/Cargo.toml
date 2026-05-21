@@ -1,5 +1,5 @@
 [package]
-name = "swe-edge-cli"
+name = "main"
 version = "0.1.0"
 edition = "2021"
 description = "edge CLI — domain and config validator, curl test scaffolder"
@@ -26,6 +26,10 @@ application_type = "lib"
 
 [lib]
 path = "src/lib.rs"
+
+[[bin]]
+name = "edge"
+path = "src/main.rs"
 
 
 
