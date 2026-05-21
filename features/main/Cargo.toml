@@ -1,0 +1,56 @@
+[package]
+name = "swe-edge-cli"
+version = "0.1.0"
+edition = "2021"
+description = "edge CLI — domain and config validator, curl test scaffolder"
+license = "MIT"
+repository = "https://github.com/sweengineeringlabs/edge"
+authors = ["SWE Labs"]
+rust-version = "1.75"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+toml = "0.8"
+serde = { version = "1", features = ["derive"] }
+walkdir = "2"
+thiserror = "2"
+
+[dev-dependencies]
+tempfile = "3"
+
+[package.metadata.struct-engine]
+application_type = "lib"
+
+
+[lib]
+path = "src/lib.rs"
+
+
+
+
+[[test]]
+name = "main_test"
+path = "tests/main_test.rs"
+
+[[test]]
+name = "main_int_test"
+path = "tests/main_int_test.rs"
+
+
+[[test]]
+name = "main_api_int_test"
+path = "tests/main_api_int_test.rs"
+
+[[test]]
+name = "config_int_test"
+path = "tests/config_int_test.rs"
+
+[[test]]
+name = "error_int_test"
+path = "tests/error_int_test.rs"
+
+[[test]]
+name = "default_main_int_test"
+path = "tests/default_main_int_test.rs"
+
+

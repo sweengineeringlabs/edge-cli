@@ -1,0 +1,6 @@
+# SEA workspace configuration (L1)
+layout = "workspace"
+
+[workspace]
+name = "cli"
+
