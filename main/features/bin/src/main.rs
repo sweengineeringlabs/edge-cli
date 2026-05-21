@@ -6,7 +6,7 @@ fn main() {
         .with_writer(std::io::stdout)
         .init();
 
-    if let Err(e) = swe_edge_cli::run() {
+    if let Err(e) = swe_edge_bin::run() {
         eprintln!("error: {e}");
         std::process::exit(1);
     }

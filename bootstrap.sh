@@ -18,7 +18,7 @@ echo "    Cargo version: $(cargo --version)"
 cd "$(dirname "$0")"
 
 # Fetch dependencies for all workspaces
-for workspace in main/features; do
+for workspace in main/features/bin; do
     echo "    Fetching dependencies for $workspace..."
     cd "$workspace"
     cargo fetch --locked

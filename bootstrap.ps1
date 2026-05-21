@@ -17,7 +17,7 @@ Write-Host "    Cargo version: $(cargo --version)"
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 
 # Fetch dependencies for all workspaces
-@("main/features") | ForEach-Object {
+@("main/features/bin") | ForEach-Object {
     $workspace = $_
     Write-Host "    Fetching dependencies for $workspace..."
     Push-Location (Join-Path $repoRoot $workspace)
