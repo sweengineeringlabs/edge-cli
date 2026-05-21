@@ -20,7 +20,7 @@ impl DefaultMain {
 impl Main for DefaultMain {
     fn execute(&self, config: &Config) -> Result<(), Error> {
         if config.verbose {
-            println!("[main] executing with verbose=true");
+            tracing::info!("executing with verbose=true");
         }
         Ok(())
     }

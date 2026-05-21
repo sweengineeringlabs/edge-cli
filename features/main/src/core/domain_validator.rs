@@ -8,7 +8,7 @@ use crate::api::error::Error;
 use crate::api::validator::{ValidationReport, Validator};
 
 /// Validates domain workspace structure against SEA requirements.
-pub struct DomainValidator;
+pub(crate) struct DomainValidator;
 
 impl Validator for DomainValidator {
     fn validate(&self, path: &Path) -> Result<ValidationReport, Error> {

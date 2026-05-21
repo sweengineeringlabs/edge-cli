@@ -7,7 +7,7 @@ use crate::api::error::Error;
 use crate::api::scaffolder::{ScaffoldReport, ScaffoldSpec, TestScaffolder};
 
 /// Generates curl integration test scripts from handler specifications.
-pub struct CurlScaffolder;
+pub(crate) struct CurlScaffolder;
 
 impl TestScaffolder for CurlScaffolder {
     fn scaffold(&self, spec: &ScaffoldSpec, output: &Path) -> Result<ScaffoldReport, Error> {

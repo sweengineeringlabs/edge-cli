@@ -8,7 +8,7 @@ use crate::api::error::Error;
 use crate::api::validator::{ValidationReport, Validator};
 
 /// Validates that all TOML config files parse correctly.
-pub struct ConfigValidator;
+pub(crate) struct ConfigValidator;
 
 impl Validator for ConfigValidator {
     fn validate(&self, path: &Path) -> Result<ValidationReport, Error> {

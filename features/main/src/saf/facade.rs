@@ -86,32 +86,32 @@ fn execute_validate(path: &std::path::Path, verbose: bool) -> Result<(), Error> 
     let domain_val = domain_validator();
     let config_val = config_validator();
 
-    println!("Validating domain structure...");
+    tracing::info!("Validating domain structure...");
     let domain_report = domain_val.validate(path)?;
 
     if verbose {
         for passed in &domain_report.passed {
-            println!("  ✓ {}", passed);
+            tracing::info!("  ✓ {}", passed);
         }
     }
     for failed in &domain_report.failed {
-        println!("  ✗ {}: {}", failed.path.display(), failed.message);
+        tracing::warn!("  ✗ {}: {}", failed.path.display(), failed.message);
     }
 
-    println!("\nValidating config files...");
+    tracing::info!("Validating config files...");
     let config_report = config_val.validate(path)?;
 
     if verbose {
         for passed in &config_report.passed {
-            println!("  ✓ {}", passed);
+            tracing::info!("  ✓ {}", passed);
         }
     }
     for failed in &config_report.failed {
-        println!("  ✗ {}: {}", failed.path.display(), failed.message);
+        tracing::warn!("  ✗ {}: {}", failed.path.display(), failed.message);
     }
 
     if domain_report.is_clean() && config_report.is_clean() {
-        println!("\n✓ All validations passed");
+        tracing::info!("✓ All validations passed");
         Ok(())
     } else {
         Err(Error::Config {
@@ -147,9 +147,9 @@ fn execute_test_gen(
 
     let report = scaffolder.scaffold(&spec, output)?;
 
-    println!("Generated {} test files:", report.files_written.len());
+    tracing::info!("Generated {} test files:", report.files_written.len());
     for file in &report.files_written {
-        println!("  ✓ {}", file.display());
+        tracing::info!("  ✓ {}", file.display());
     }
 
     Ok(())
