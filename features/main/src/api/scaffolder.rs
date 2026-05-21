@@ -43,3 +43,49 @@ impl ScaffoldReport {
         self.files_written.push(path);
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_scaffold_report_new_is_empty() {
+        let report = ScaffoldReport::new();
+        assert!(report.files_written.is_empty());
+    }
+
+    #[test]
+    fn test_scaffold_report_add_file() {
+        let mut report = ScaffoldReport::new();
+        let path = PathBuf::from("/tmp/test.sh");
+        report.add_file(path.clone());
+        assert_eq!(report.files_written.len(), 1);
+        assert_eq!(report.files_written[0], path);
+    }
+
+    #[test]
+    fn test_handler_spec_constructs() {
+        let spec = HandlerSpec {
+            id: "list_items".to_string(),
+            pattern: "/items".to_string(),
+            method: "GET".to_string(),
+        };
+        assert_eq!(spec.id, "list_items");
+        assert_eq!(spec.pattern, "/items");
+        assert_eq!(spec.method, "GET");
+    }
+
+    #[test]
+    fn test_scaffold_spec_constructs() {
+        let spec = ScaffoldSpec {
+            handlers: vec![HandlerSpec {
+                id: "test".to_string(),
+                pattern: "/test".to_string(),
+                method: "POST".to_string(),
+            }],
+            base_url: "http://localhost:8080".to_string(),
+        };
+        assert_eq!(spec.handlers.len(), 1);
+        assert_eq!(spec.base_url, "http://localhost:8080");
+    }
+}

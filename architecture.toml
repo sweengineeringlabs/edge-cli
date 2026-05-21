@@ -9,6 +9,7 @@ allow = [
   ".gitignore", "CHANGELOG.md", "README.md",
   "architecture.toml", "deny.toml",
   "SECURITY.md", "Cargo.toml",
+  "bootstrap.sh", "bootstrap.ps1",
   "features",
 ]
 
