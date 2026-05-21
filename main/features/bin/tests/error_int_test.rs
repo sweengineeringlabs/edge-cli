@@ -1,6 +1,6 @@
 //! Error integration tests for main.
 
-use main::*;
+use swe_edge_bin::*;
 
 #[test]
 fn test_error_display_io() {

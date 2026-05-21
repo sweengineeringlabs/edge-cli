@@ -1,6 +1,6 @@
 //! Integration tests for SAF (Service Abstraction Framework) public API.
 
-use main::{config_validator, curl_scaffolder, domain_validator};
+use swe_edge_bin::{config_validator, curl_scaffolder, domain_validator};
 
 #[test]
 fn test_domain_validator_factory_returns_validator() {
@@ -23,8 +23,8 @@ fn test_curl_scaffolder_factory_returns_scaffolder() {
 #[test]
 fn test_saf_exports_are_accessible() {
     // Test that core types from saf are publicly accessible
-    let _config = main::Config::default();
-    let _command = main::Command::Validate {
+    let _config = swe_edge_bin::Config::default();
+    let _command = swe_edge_bin::Command::Validate {
         path: std::path::PathBuf::from("."),
     };
 }
