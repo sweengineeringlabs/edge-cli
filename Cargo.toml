@@ -1,5 +1,5 @@
 [workspace]
 members = [
-    "main/features",
+    "main/features/cli",
 ]
 resolver = "2"
