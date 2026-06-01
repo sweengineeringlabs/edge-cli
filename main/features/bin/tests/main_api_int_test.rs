@@ -1,6 +1,6 @@
 //! API trait integration tests for main.
 
-use swe_edge_bin::*;
+use swe_edge_bin::Main;
 
 /// @covers: Main
 #[test]

@@ -1,9 +1,9 @@
-//! main - A SEA-compliant Rust library.
+//! swe-edge-bin — edge CLI library.
 
 mod api;
-
 mod core;
-
+mod gateway;
 mod saf;
+mod spi;
 
-pub use saf::*;
+pub use gateway::*;

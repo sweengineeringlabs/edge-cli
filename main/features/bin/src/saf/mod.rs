@@ -1,17 +1,20 @@
-//! SAF facade layer (L4) - public surface.
+//! SAF facade layer — public surface.
 //!
-//! Re-export types from api/ and expose core functionality
-//! via standalone public functions.
+//! Re-exports types from api/ and exposes BinSvc for CLI dispatch.
 
-mod facade;
+mod bin_svc;
 
-// Re-export public types
-pub use crate::api::commands::Command;
-pub use crate::api::config::Config;
-pub use crate::api::error::Error;
-pub use crate::api::main::Main;
-pub use crate::api::scaffolder::{HandlerSpec, ScaffoldReport, ScaffoldSpec, TestScaffolder};
-pub use crate::api::validator::{ValidationFailure, ValidationReport, Validator};
+// Primary facade type
+pub use crate::api::bin::BinSvc;
 
-// Re-export facade functions
-pub use facade::{config_validator, curl_scaffolder, domain_validator, execute, run};
+// Public error type
+pub use crate::api::error::BinError;
+
+// Public data types
+pub use crate::api::types::command::Command;
+pub use crate::api::types::config::Config;
+pub use crate::api::types::scaffold::handler_spec::HandlerSpec;
+pub use crate::api::types::scaffold::scaffold_report::ScaffoldReport;
+pub use crate::api::types::scaffold::scaffold_spec::ScaffoldSpec;
+pub use crate::api::types::validation::validation_failure::ValidationFailure;
+pub use crate::api::types::validation::validation_report::ValidationReport;

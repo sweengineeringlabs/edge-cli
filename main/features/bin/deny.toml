@@ -1,0 +1,20 @@
+# cargo-deny configuration for swe-edge-bin
+# Checks for dependency vulnerabilities and licensing issues
+
+[advisories]
+db-path = "$CARGO_HOME/advisory-db"
+vulnerability = "deny"
+unmaintained = "warn"
+yanked = "warn"
+notice = "warn"
+
+[licenses]
+unlicensed = "deny"
+allow = [
+  "Apache-2.0",
+  "MIT",
+  "Apache-2.0 OR MIT",
+]
+
+[bans]
+multiple-versions = "warn"

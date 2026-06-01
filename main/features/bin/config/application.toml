@@ -1,0 +1,10 @@
+# Application configuration for swe-edge-bin
+# Override defaults for this workspace.
+
+[application]
+name = "swe-edge-bin"
+version = "0.1.0"
+
+[logging]
+level = "info"
+format = "compact"

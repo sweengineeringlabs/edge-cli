@@ -1,5 +1,5 @@
 [package]
-name = "swe_edge_bin"
+name = "swe-edge-bin"
 version = "0.1.0"
 edition = "2021"
 description = "edge CLI — domain and config validator, curl test scaffolder"
@@ -19,29 +19,28 @@ thiserror = "2"
 
 [dev-dependencies]
 tempfile = "3"
+walkdir = "2"
 
 [package.metadata.struct-engine]
 application_type = "lib"
+service_type = "cli"
 
 
 [lib]
+name = "swe_edge_bin"
 path = "src/lib.rs"
 
 [[bin]]
 name = "edge"
 path = "src/main.rs"
 
-
-
-
 [[test]]
-name = "main_test"
-path = "tests/main_test.rs"
+name = "main_e2e_test"
+path = "tests/main_e2e_test.rs"
 
 [[test]]
 name = "main_int_test"
 path = "tests/main_int_test.rs"
-
 
 [[test]]
 name = "main_api_int_test"
@@ -59,4 +58,98 @@ path = "tests/error_int_test.rs"
 name = "default_main_int_test"
 path = "tests/default_main_int_test.rs"
 
+[[test]]
+name = "saf_int_test"
+path = "tests/saf_int_test.rs"
 
+[[test]]
+name = "scaffolder_int_test"
+path = "tests/scaffolder_int_test.rs"
+
+[[test]]
+name = "validator_int_test"
+path = "tests/validator_int_test.rs"
+
+[[test]]
+name = "handler_spec_int_test"
+path = "tests/handler_spec_int_test.rs"
+
+[[test]]
+name = "scaffold_report_int_test"
+path = "tests/scaffold_report_int_test.rs"
+
+[[test]]
+name = "scaffold_spec_int_test"
+path = "tests/scaffold_spec_int_test.rs"
+
+[[test]]
+name = "validation_report_int_test"
+path = "tests/validation_report_int_test.rs"
+
+[[test]]
+name = "config_validator_contract_int_test"
+path = "tests/config_validator_contract_int_test.rs"
+
+[[test]]
+name = "curl_scaffolder_contract_int_test"
+path = "tests/curl_scaffolder_contract_int_test.rs"
+
+[[test]]
+name = "domain_validator_contract_int_test"
+path = "tests/domain_validator_contract_int_test.rs"
+
+[[test]]
+name = "application_config_builder_int_test"
+path = "tests/application_config_builder_int_test.rs"
+
+[[test]]
+name = "bin_error_int_test"
+path = "tests/bin_error_int_test.rs"
+
+[[test]]
+name = "gateway_int_test"
+path = "tests/gateway_int_test.rs"
+
+[[test]]
+name = "walkdir_int_test"
+path = "tests/walkdir_int_test.rs"
+
+[[test]]
+name = "validation_provider_int_test"
+path = "tests/validation_provider_int_test.rs"
+
+[[test]]
+name = "bin_svc_int_test"
+path = "tests/bin_svc_int_test.rs"
+
+[[test]]
+name = "main_contract_int_test"
+path = "tests/main_contract_int_test.rs"
+
+[[test]]
+name = "provider_registry_int_test"
+path = "tests/provider_registry_int_test.rs"
+
+[[test]]
+name = "provider_registry_contract_int_test"
+path = "tests/provider_registry_contract_int_test.rs"
+
+[[test]]
+name = "noop_validation_provider_int_test"
+path = "tests/noop_validation_provider_int_test.rs"
+
+[[test]]
+name = "command_int_test"
+path = "tests/command_int_test.rs"
+
+[[test]]
+name = "validation_failure_int_test"
+path = "tests/validation_failure_int_test.rs"
+
+[[example]]
+name = "validate"
+path = "examples/validate.rs"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
