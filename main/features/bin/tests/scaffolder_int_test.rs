@@ -1,6 +1,6 @@
 //! Integration tests for the Scaffolder trait.
+#![allow(clippy::unwrap_used, clippy::expect_used)]
 
-use std::path::PathBuf;
 use swe_edge_bin::{BinSvc, HandlerSpec, ScaffoldSpec, Scaffolder};
 
 /// @covers: Scaffolder::scaffold
@@ -20,7 +20,7 @@ fn test_scaffolder_trait_scaffold_generates_files() {
     let temp_dir = tempfile::TempDir::new().unwrap();
     let report = scaffolder.scaffold(&spec, temp_dir.path()).unwrap();
 
-    assert!(report.files_written.len() >= 1);
+    assert!(!report.files_written.is_empty());
 }
 
 /// @covers: Scaffolder

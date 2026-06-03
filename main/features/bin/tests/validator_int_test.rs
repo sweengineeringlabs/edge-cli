@@ -1,4 +1,5 @@
 //! Integration tests for the Validator trait.
+#![allow(clippy::unwrap_used, clippy::expect_used)]
 
 use swe_edge_bin::{BinSvc, Validator};
 

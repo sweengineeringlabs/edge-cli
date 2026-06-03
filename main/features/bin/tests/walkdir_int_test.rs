@@ -1,4 +1,5 @@
 //! Integration tests exercising the walkdir dependency.
+#![allow(clippy::unwrap_used, clippy::expect_used)]
 
 use std::fs;
 use swe_edge_bin::BinSvc;
