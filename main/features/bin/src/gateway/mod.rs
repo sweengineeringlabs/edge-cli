@@ -6,6 +6,7 @@ pub(crate) mod egress;
 pub(crate) mod ingress;
 
 // Re-export types from saf/ (data types, error, primary facade)
+pub use crate::saf::default_config_path;
 pub use crate::saf::BinError;
 pub use crate::saf::BinSvc;
 pub use crate::saf::Command;

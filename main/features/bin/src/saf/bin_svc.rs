@@ -3,6 +3,30 @@
 use clap::Parser;
 use std::path::PathBuf;
 
+/// Resolve the XDG-compliant default config directory for the edge CLI.
+///
+/// Returns `$XDG_CONFIG_HOME/swe-edge` on Linux/macOS (or the OS equivalent
+/// via the `dirs` crate), falling back to `"."` when no home directory can
+/// be determined.
+///
+/// Used as the default `path` argument when the user does not supply one on
+/// the `validate` or `test-gen` subcommands.
+///
+/// # Examples
+///
+/// ```rust
+/// use swe_edge_bin::default_config_path;
+///
+/// let path = default_config_path();
+/// // Always returns a valid path — either XDG or the cwd fallback.
+/// assert!(!path.as_os_str().is_empty());
+/// ```
+pub fn default_config_path() -> PathBuf {
+    dirs::config_dir()
+        .map(|d| d.join("swe-edge"))
+        .unwrap_or_else(|| PathBuf::from("."))
+}
+
 use crate::api::bin::BinSvc;
 use crate::api::error::BinError;
 use crate::api::traits::main::Main;

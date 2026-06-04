@@ -7,6 +7,9 @@ mod bin_svc;
 // Primary facade type
 pub use crate::api::bin::BinSvc;
 
+// XDG-compliant path resolution
+pub use bin_svc::default_config_path;
+
 // Public error type
 pub use crate::api::error::BinError;
 

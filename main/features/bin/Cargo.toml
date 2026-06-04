@@ -10,6 +10,7 @@ rust-version = "1.75"
 
 [dependencies]
 clap = { version = "4", features = ["derive"] }
+dirs = "5"
 toml = "0.8"
 serde = { version = "1", features = ["derive"] }
 tracing = "0.1"
