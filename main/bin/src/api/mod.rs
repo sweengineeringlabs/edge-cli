@@ -1,11 +1,13 @@
-//! Public API layer (L2) - traits and types.
+//! Public API layer — traits and types.
+//!
+//! Theme dirs (`main/`, `provider/`, `scaffold/`, `validator/`) carry the
+//! inner SEA layout; crate-level `traits/`, `types/`, `error/`, and `vo/`
+//! hold cross-theme contracts consumed by two or more themes.
 
-pub mod bin;
-pub mod config;
 pub mod error;
 pub mod main;
+pub mod provider;
 pub mod scaffold;
-pub mod spi;
-pub mod traits;
 pub mod types;
 pub mod validator;
+pub mod vo;

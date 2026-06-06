@@ -27,15 +27,15 @@ pub fn default_config_path() -> PathBuf {
         .unwrap_or_else(|| PathBuf::from("."))
 }
 
-use crate::api::bin::BinSvc;
 use crate::api::error::BinError;
-use crate::api::traits::main::Main;
-use crate::api::traits::scaffolder::Scaffolder;
-use crate::api::traits::validator::Validator;
-use crate::api::types::command::Command;
-use crate::api::types::config::Config;
+use crate::api::main::traits::main::Main;
+use crate::api::main::vo::config::Config;
+use crate::api::scaffold::traits::scaffolder::Scaffolder;
+use crate::api::types::bin_svc::BinSvc;
+use crate::api::validator::traits::validator::Validator;
+use crate::api::vo::command::Command;
+use crate::core::ProviderRegistry;
 use crate::core::{ConfigValidator, CurlScaffolder, DefaultMain, DomainValidator};
-use crate::spi::ProviderRegistry;
 
 #[derive(Parser)]
 #[command(name = "edge")]
@@ -165,14 +165,14 @@ impl BinSvc {
     ) -> Result<(), BinError> {
         let scaffolder = self.curl_scaffolder();
 
-        let spec = crate::api::types::scaffold::scaffold_spec::ScaffoldSpec {
+        let spec = crate::api::scaffold::vo::scaffold_spec::ScaffoldSpec {
             handlers: vec![
-                crate::api::types::scaffold::handler_spec::HandlerSpec {
+                crate::api::scaffold::vo::handler_spec::HandlerSpec {
                     id: "health".to_string(),
                     pattern: "/health".to_string(),
                     method: "GET".to_string(),
                 },
-                crate::api::types::scaffold::handler_spec::HandlerSpec {
+                crate::api::scaffold::vo::handler_spec::HandlerSpec {
                     id: "list_handlers".to_string(),
                     pattern: "/handlers".to_string(),
                     method: "GET".to_string(),

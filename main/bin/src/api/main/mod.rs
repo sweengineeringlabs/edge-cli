@@ -1,3 +1,5 @@
-//! Main interface counterpart for core/main/.
+//! Main theme — the run-entry contract for the CLI.
 
-pub mod main_contract;
+pub mod traits;
+pub mod types;
+pub mod vo;

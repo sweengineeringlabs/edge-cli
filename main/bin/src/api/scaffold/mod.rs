@@ -1,4 +1,5 @@
-//! Scaffold interface counterpart for core/scaffold/.
+//! Scaffold theme — integration test generation contracts.
 
-pub mod curl;
-pub mod curl_scaffolder_contract;
+pub mod traits;
+pub mod types;
+pub mod vo;

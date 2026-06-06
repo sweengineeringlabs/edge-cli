@@ -5,8 +5,8 @@ use std::path::Path;
 use walkdir::WalkDir;
 
 use crate::api::error::BinError;
-use crate::api::traits::validator::Validator;
-use crate::api::types::validation::validation_report::ValidationReport;
+use crate::api::validator::traits::validator::Validator;
+use crate::api::vo::validation_report::ValidationReport;
 
 /// Validates domain workspace structure against SEA requirements.
 pub(crate) struct DomainValidator;

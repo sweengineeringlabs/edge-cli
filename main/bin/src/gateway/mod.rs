@@ -18,23 +18,23 @@ pub use crate::saf::ValidationFailure;
 pub use crate::saf::ValidationReport;
 
 // Re-export traits directly from api/ (not via saf/ to avoid rule 126 in saf/)
-pub use crate::api::traits::main::Main;
-pub use crate::api::traits::provider_registry_contract::ProviderRegistryContract;
-pub use crate::api::traits::scaffolder::Scaffolder;
-pub use crate::api::traits::validation_provider::ValidationProvider;
-pub use crate::api::traits::validator::Validator;
+pub use crate::api::main::traits::main::Main;
+pub use crate::api::provider::traits::provider_registry_contract::ProviderRegistryContract;
+pub use crate::api::provider::traits::validation_provider::ValidationProvider;
+pub use crate::api::scaffold::traits::scaffolder::Scaffolder;
+pub use crate::api::validator::traits::validator::Validator;
 
 // Re-export interface contracts from domain-organized api/ locations
-pub use crate::api::main::main_contract::MainContract;
-pub use crate::api::scaffold::curl::Curl as CurlBound;
-pub use crate::api::scaffold::curl_scaffolder_contract::CurlScaffolderContract;
-pub use crate::api::validator::config::Config as ConfigBound;
-pub use crate::api::validator::config_validator_contract::ConfigValidatorContract;
-pub use crate::api::validator::domain::Domain as DomainBound;
-pub use crate::api::validator::domain_validator_contract::DomainValidatorContract;
+pub use crate::api::main::types::main_contract::MainContract;
+pub use crate::api::scaffold::types::curl::Curl as CurlBound;
+pub use crate::api::scaffold::types::curl_scaffolder_contract::CurlScaffolderContract;
+pub use crate::api::validator::types::config::Config as ConfigBound;
+pub use crate::api::validator::types::config_validator_contract::ConfigValidatorContract;
+pub use crate::api::validator::types::domain::Domain as DomainBound;
+pub use crate::api::validator::types::domain_validator_contract::DomainValidatorContract;
 
 // Re-export config builder
-pub use crate::api::config::ApplicationConfigBuilder;
+pub use crate::api::types::application_config_builder::ApplicationConfigBuilder;
 
 // Re-export SPI default implementations (from api/spi/ which is public)
-pub use crate::api::spi::noop_validation_provider::NoopValidationProvider;
+pub use crate::api::provider::types::noop_validation_provider::NoopValidationProvider;

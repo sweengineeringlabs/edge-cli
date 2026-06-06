@@ -1,8 +1,8 @@
 //! Default Main implementation.
 
 use crate::api::error::BinError;
-use crate::api::traits::main::Main;
-use crate::api::types::config::Config;
+use crate::api::main::traits::main::Main;
+use crate::api::main::vo::config::Config;
 
 /// Default implementation of the Main trait.
 #[derive(Debug, Default)]

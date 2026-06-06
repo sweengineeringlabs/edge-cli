@@ -1,6 +1,4 @@
-//! Validator interface counterpart for core/validator/.
+//! Validator theme — project structure and config validation contracts.
 
-pub mod config;
-pub mod config_validator_contract;
-pub mod domain;
-pub mod domain_validator_contract;
+pub mod traits;
+pub mod types;

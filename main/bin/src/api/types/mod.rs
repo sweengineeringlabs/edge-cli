@@ -1,6 +1,4 @@
-//! Public API types.
+//! Cross-theme types — service facade and application config builder.
 
-pub mod command;
-pub mod config;
-pub mod scaffold;
-pub mod validation;
+pub mod application_config_builder;
+pub mod bin_svc;

@@ -4,10 +4,10 @@ use std::fs;
 use std::path::Path;
 
 use crate::api::error::BinError;
-use crate::api::traits::scaffolder::Scaffolder;
-use crate::api::types::scaffold::handler_spec::HandlerSpec;
-use crate::api::types::scaffold::scaffold_report::ScaffoldReport;
-use crate::api::types::scaffold::scaffold_spec::ScaffoldSpec;
+use crate::api::scaffold::traits::scaffolder::Scaffolder;
+use crate::api::scaffold::vo::handler_spec::HandlerSpec;
+use crate::api::scaffold::vo::scaffold_report::ScaffoldReport;
+use crate::api::scaffold::vo::scaffold_spec::ScaffoldSpec;
 
 /// Generates curl integration test scripts from handler specifications.
 pub(crate) struct CurlScaffolder;
