@@ -1,5 +1,0 @@
-[workspace]
-members = [
-    "main/bin",
-]
-resolver = "2"

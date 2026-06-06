@@ -29,11 +29,11 @@ service_type = "cli"
 
 [lib]
 name = "swe_edge_bin"
-path = "src/lib.rs"
+path = "main/src/lib.rs"
 
 [[bin]]
 name = "edge"
-path = "src/main.rs"
+path = "main/src/main.rs"
 
 [[test]]
 name = "main_e2e_test"
